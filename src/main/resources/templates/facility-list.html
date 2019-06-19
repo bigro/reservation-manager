@@ -4,21 +4,33 @@
 
 <head>
     <title>施設リスト</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- semantic.css  -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <!-- semantic.js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
 </head>
 
 <body>
-<table>
-    <tr>
-        <th>拠点</th>
-        <th>施設</th>
-    </tr>
-    <tr th:each="facility : ${facilities}">
-        <td th:text="${facility.base().name()}"></td>
-        <td th:text="${facility.name()}"></td>
-    </tr>
-</table>
-
+<br>
+<div class="ui container segment">
+    <h1 class="ui header">施設一覧</h1>
+    <table class="ui celled table">
+        <thead>
+        <tr>
+            <th>拠点</th>
+            <th>施設</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="facility : ${facilities}">
+            <td th:text="${facility.base().name()}"></td>
+            <td th:text="${facility.name()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 
 </html>
