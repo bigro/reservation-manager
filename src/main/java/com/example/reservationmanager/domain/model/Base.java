@@ -4,6 +4,9 @@ public class Base {
     int id;
     String name;
 
+    private Base() {
+    }
+
     public Base(int id, String name) {
         this.id = id;
         this.name = name;

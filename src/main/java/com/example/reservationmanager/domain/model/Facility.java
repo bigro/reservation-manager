@@ -5,6 +5,9 @@ public class Facility {
     String name;
     Base base;
 
+    private Facility() {
+    }
+
     public Facility(int id, String name, Base base) {
         this.id = id;
         this.name = name;
