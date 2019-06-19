@@ -1,0 +1,10 @@
+version: '3'
+services:
+  db-reservation:
+    image: postgres:11.1
+    environment:
+      POSTGRES_USER: reservation
+      POSTGRES_PASSWORD: abcdefg
+      POSTGRES_DB: reservation_database
+    ports:
+    - "15432:5432"
