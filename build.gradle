@@ -1,6 +1,20 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.5.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath ("org.postgresql:postgresql:42.2.5")
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.1.5.RELEASE'
 	id 'java'
+	id "org.flywaydb.flyway" version "5.2.4"
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -8,6 +22,13 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+flyway {
+	url = 'jdbc:postgresql://localhost:15432/reservation_database'
+	user = 'reservation'
+	password = 'abcdefg'
+	schemas = ['reservation']
+}
 
 repositories {
 	mavenCentral()
